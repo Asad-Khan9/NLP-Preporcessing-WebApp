@@ -9,7 +9,7 @@ This is a web application built with Streamlit for end-to-end data preprocessing
 - **Remove Stopwords:** Remove stopwords from selected columns.
 - **Expand Contractions:** Expand contractions in selected columns.
 - **Lemmatization:** Lemmatize words in selected columns.
-
+  
 ## How to Use
 
 1. Upload your dataset.
@@ -24,3 +24,4 @@ This is a web application built with Streamlit for end-to-end data preprocessing
 ![image](https://github.com/Asad-Khan9/NLP-Preporcessing-WebApp/assets/78179407/4807b89a-c051-4b17-8aa3-d97b922be8f4)
 
 
+**Working on a tone of more features to be added soon**
