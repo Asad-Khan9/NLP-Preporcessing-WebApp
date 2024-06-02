@@ -1,13 +1,3 @@
-# import streamlit as st
-
-# col1, col2, col3, col4 = st.columns(4)
-
-# for i in range(4):
-#     with eval(f"col{i+1}"):
-#         st.header("A cat")
-#         st.content_input(f"jdfgjd{i+1}")
-
-#--------------------------
 import time
 import pandas as pd
 import nltk
