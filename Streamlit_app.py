@@ -62,8 +62,8 @@ uploaded_file = st.file_uploader("200MB")
 st.divider()  
 if uploaded_file is not None:
     df1 = pd.read_csv(uploaded_file)
-    st.header("Initial Dataframe")
-    st.write(df1)
+    st.header("Initial Dataframe (Sample of 100 rows)")
+    st.write(df1.sample(n=min(100, len(df1))))
 
     # file_path = os.path.join("dataset\\", uploaded_file.name)
     # with open(file_path, "wb") as f:
