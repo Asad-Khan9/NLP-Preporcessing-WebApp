@@ -38,12 +38,17 @@ styles = """
 st.markdown(styles, unsafe_allow_html=True)
 
 # Render the title with an image
-title_html = """
-<div class="title-container">
-    <img class="title-image" src="data:image/png;base64,{}" alt="Title Image">
-    <span class="title-text">NLP Data Preprocessing Tool</span>
-</div>
-""".format(get_base64_of_bin_file("titleimage\\table.png"))
+
+
+
+# title_html = """
+# <div class="title-container">
+#     <img class="title-image" src="data:image/png;base64,{}" alt="Title Image">
+#     <span class="title-text">NLP Data Preprocessing Tool</span>
+# </div>
+# """.format(get_base64_of_bin_file("titleimage\\table.png"))
+
+
 
 st.markdown(title_html, unsafe_allow_html=True)
 st.markdown("<center>Perform end-to-end data preprocessing for your NLP projects</center>", unsafe_allow_html=True)
