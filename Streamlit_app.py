@@ -1,9 +1,3 @@
-#kahdbcjabcjhbacjcjcjhm b  jsdb jsdbj bs msd djdbcb 
-#kahdbcjabcjhbacjcjcjhm b  jsdb jsdbj bs msd djdbcb 
-#kahdbcjabcjhbacjcjcjhm b  jsdb jsdbj bs msd djdbcb 
-#kahdbcjabcjhbacjcjcjhm b  jsdb jsdbj bs msd djdbcb 
-#kahdbcjabcjhbacjcjcjhm b  jsdb jsdbj bs msd djdbcb 
-#kahdbcjabcjhbacjcjcjhm b  jsdb jsdbj bs msd djdbcb 
 import streamlit as st
 import pandas as pd
 import time
