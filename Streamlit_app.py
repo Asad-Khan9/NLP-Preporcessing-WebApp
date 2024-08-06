@@ -5,7 +5,11 @@ import os
 from back import toLower, removePunctuation, removeStopwords, expandContractions, lemmatizeText
 
 st.set_page_config(layout="wide")
+import multiprocessing
 
+num_cores = multiprocessing.cpu_count()
+# print(f"Number of CPU cores: {num_cores}")
+st.write(num_cores)
 import base64                             
 
 def get_base64_of_bin_file(bin_file):
