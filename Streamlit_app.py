@@ -61,9 +61,9 @@ if uploaded_file is not None:
     st.header("Initial Dataframe")
     st.write(df1)
 
-    file_path = os.path.join("dataset\\", uploaded_file.name)
-    with open(file_path, "wb") as f:
-        f.write(uploaded_file.getbuffer())
+    # file_path = os.path.join("dataset\\", uploaded_file.name)
+    # with open(file_path, "wb") as f:
+    #     f.write(uploaded_file.getbuffer())
     
     columns_ = df1.columns
     columns = {"None"}.union(columns_)
