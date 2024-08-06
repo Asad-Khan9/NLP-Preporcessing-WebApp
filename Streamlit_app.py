@@ -50,7 +50,7 @@ st.markdown(styles, unsafe_allow_html=True)
 
 
 
-st.markdown(title_html, unsafe_allow_html=True)
+# st.markdown(title_html, unsafe_allow_html=True)
 st.markdown("<center>Perform end-to-end data preprocessing for your NLP projects</center>", unsafe_allow_html=True)
 st.divider()
 st.write("Upload the file here")  
