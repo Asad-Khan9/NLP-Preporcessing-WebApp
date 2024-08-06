@@ -90,16 +90,49 @@ def process_chunk(df_chunk, func, column, *args):
     df_chunk[column] = df_chunk[column].apply(lambda x: func(x, *args))
     return df_chunk
 
-def parallelize_dataframe(df, func, column, *args, num_partitions=16):
+# def parallelize_dataframe(df, func, column, *args, num_partitions=16):
+#     """
+#     Split the dataframe into chunks, apply the processing function in parallel, and recombine.
+#     """
+#     chunks = [df.iloc[df.shape[0] // num_partitions * i: df.shape[0] // num_partitions * (i + 1)] for i in range(num_partitions)]
+#     pool = Pool(processes=num_partitions)
+#     processed_chunks = pool.starmap(process_chunk, [(chunk, func, column, *args) for chunk in chunks])
+#     pool.close()
+#     pool.join()
+#     return pd.concat(processed_chunks)
+
+import multiprocessing
+
+def parallelize_dataframe(df, func, column, *args):
     """
-    Split the dataframe into chunks, apply the processing function in parallel, and recombine.
+    Split the dataframe into chunks based on CPU count, apply the processing function in parallel, and recombine.
     """
-    chunks = [df.iloc[df.shape[0] // num_partitions * i: df.shape[0] // num_partitions * (i + 1)] for i in range(num_partitions)]
+    # Get the number of CPU cores
+    num_cores = multiprocessing.cpu_count()
+    
+    # Use one less than the total number of cores, but at least 1
+    num_partitions = max(1, num_cores - 1)
+    
+    # Split the dataframe into chunks
+    chunk_size = df.shape[0] // num_partitions
+    chunks = [df.iloc[i:i + chunk_size] for i in range(0, df.shape[0], chunk_size)]
+    
+    # Create a pool of workers
     pool = Pool(processes=num_partitions)
+    
+    # Apply the function to each chunk in parallel
     processed_chunks = pool.starmap(process_chunk, [(chunk, func, column, *args) for chunk in chunks])
+    
+    # Close the pool and wait for the work to finish
     pool.close()
     pool.join()
+    
+    # Combine the processed chunks
     return pd.concat(processed_chunks)
+
+
+
+
 
 def toLower(df, column, multiprocessFlag):
     if multiprocessFlag == 1:
